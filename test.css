@@ -1,0 +1,69 @@
+* {
+  list-style-type: none;
+}
+
+#screen {
+  display: flex;
+  min-height: 100vh;
+}
+.left_side {
+  border: 1px solid red;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left_side .word {
+  display: flex;
+}
+
+.left_side .word li {
+  border: 1px solid #000;
+  background-color: #000;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left_side .word li p {
+  font-size: 32px;
+}
+
+.left_side .word li.open {
+  background-color: #fff;
+}
+
+.left_side .letters {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left_side .letters li {
+  width: 60px;
+}
+
+.right_side {
+  border: 1px solid blue;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.right_side .image {
+  position: relative;
+  background-image: url('./image/horse.jpeg');
+  flex: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.right_side .image .overlay {
+  background-color: grey;
+  height: 100%;
+  width: 100%;
+}
