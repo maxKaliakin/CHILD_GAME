@@ -36,6 +36,7 @@ const russianAlphabet = [
 
 const data = {
   word: 'лошадь',
+  hint: 'Четыре ноги, пятый хвост, шестая грива',
   image: 'http:///asdasd/horse.jpg',
   video: 'http:///asdasd/horse.mp4',
 };
@@ -80,14 +81,15 @@ const checkLetterInSecretWord = (letter) => {
   }
 };
 
-// Отрисовываем слово, которое будем отгадывать
 const renderLetters = () => {
-  return secretWord.forEach((el) => {
+  secretWord.forEach((el) => {
     const letterBox = document.createElement('li');
     letterBox.className = el ? 'open' : '';
     letterBox.textContent = el;
     document.getElementById('word').appendChild(letterBox);
   });
+
+  document.getElementById('hint').textContent = data.hint;
 };
 
 // Открываем уже в HTML букву по индексу
@@ -97,8 +99,10 @@ const openLetter = (index, letter) => {
   element.textContent = letter;
 };
 
+// Отрисовываем слово, которое будем отгадывать и подсказку к ней
 renderLetters();
 
+// Добавляем буквы - кнопки
 russianAlphabet.forEach((el) => {
   const button = document.createElement('button');
   button.className = 'keypadButton';
