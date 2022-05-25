@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
 }
-/* 123 */
+
 #screen {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -26,9 +26,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   padding: 40px 0;
 }
 
@@ -36,9 +35,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  align-content: center;
-  align-items: center;
-  background-color: rgb(161, 16, 16);
 }
 
 .left_side .word li {
@@ -55,6 +51,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 50px;
+  font-weight: bold;
+  padding-bottom: 10px;
 }
 
 .left_side .word li p {
@@ -69,10 +68,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .left_side .keypadButton {
@@ -121,3 +122,4 @@
   height: 100%;
   width: 100%;
 }
+/*# sourceMappingURL=test.css.map */

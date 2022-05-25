@@ -1,5 +1,7 @@
 * {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 #screen {
@@ -14,7 +16,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 40px 0;
   & .word {
     display: flex;
@@ -26,6 +28,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      font-size: 50px;
+      font-weight: bold;
+      padding-bottom: 10px;
       & p {
         font-size: 32px;
       }
@@ -38,6 +43,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: center;
 
     &Button {
       width: 60px;
