@@ -1,5 +1,7 @@
 * {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 #screen {
@@ -10,7 +12,6 @@
 }
 
 .left_side {
-  border: 1px solid red;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -27,20 +28,22 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 40px 0;
+  padding: 40px;
 }
 
 .left_side .word {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 2px;
+  text-transform: uppercase;
 }
 
 .left_side .word li {
   border: 1px solid #000;
   background-color: #000;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,9 +53,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.left_side .word li p {
   font-size: 32px;
 }
 
@@ -67,6 +67,9 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .left_side .keypadButton {
@@ -81,12 +84,16 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid red;
+  border: 1px solid;
   text-transform: uppercase;
 }
 
+.left_side .keypadButton:hover {
+  cursor: pointer;
+  border-color: blue;
+}
+
 .right_side {
-  border: 1px solid blue;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -102,7 +109,6 @@
 
 .right_side .image {
   position: relative;
-  background-image: url("./image/horse.jpeg");
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -111,7 +117,20 @@
 }
 
 .right_side .image .overlay {
-  background-color: rgba(200, 200, 200, 0.9);
+  background-color: rgba(200, 200, 200, 0.97);
   height: 100%;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.right_side .image .overlay .block {
+  background-image: url("./image/question.png");
+  background-color: rebeccapurple;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
 }
