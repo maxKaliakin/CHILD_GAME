@@ -40,9 +40,9 @@ const data = {
   video: 'http:///asdasd/horse.mp4',
 };
 
-const wordCreate = (slovo) => {};
-
-wordCreate(data.word);
+const getRandomNumber = (number) => {
+  return Math.floor(Math.random() * number);
+};
 
 russianAlphabet.forEach((el) => {
   const button = document.createElement('button');
@@ -52,11 +52,3 @@ russianAlphabet.forEach((el) => {
   button.textContent = el;
   document.getElementById('keypad').appendChild(button);
 });
-
-// function getRandomInt(chislo) {
-//   return Math.floor(Math.random() * chislo);
-// }
-
-// const word = slovo.length; // 10
-
-// console.log(Math.floor(Math.random() * data.word.length));
