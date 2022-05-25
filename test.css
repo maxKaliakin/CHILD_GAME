@@ -36,7 +36,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background-color: rgb(161, 16, 16);
 }
 
 .left_side .word li {
