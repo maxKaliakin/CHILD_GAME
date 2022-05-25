@@ -37,6 +37,7 @@ const russianAlphabet = [
 russianAlphabet.forEach((el) => {
   const button = document.createElement('button');
   button.className = 'keypadButton';
+  console.log('YO');
   button.type = 'button';
   button.addEventListener('click', () => console.log(el));
   button.textContent = JSON.stringify(el);
