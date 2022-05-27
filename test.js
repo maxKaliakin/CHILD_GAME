@@ -37,7 +37,7 @@ const russianAlphabet = [
 const data = {
   word: 'лошадь',
   hint: 'Четыре ноги, пятый хвост, шестая грива',
-  image: 'http:///asdasd/horse.jpg',
+  image: './image/horse.jpeg',
   video: 'http:///asdasd/horse.mp4',
 };
 
@@ -49,36 +49,30 @@ const getRandomNumber = (number) => {
   return Math.floor(Math.random() * number);
 };
 
-// Открываем рендомный кусок картинки
-const openRandomImagePart = () => {
-  console.log(
-    'Открываем этот кусочек ===>>>',
-    getRandomNumber(lettersArray.length),
-  );
-  // TODO:  Добавить проверку - была ли цифра уже открыта
-};
-
-// Открываем букву на табло
-const openRightLetter = () => {
-  // TODO: Перерисовываем слово на табло с учетом открытых букв в secretWord
-};
-
 const checkLetterInSecretWord = (letter) => {
   // Проверяем есть ли буква в массиве букв из отгадываемого слова
   if (lettersArray.includes(letter)) {
     //Если да - проверяем по какому индексу и добавляем сразу в скрытое слово
     lettersArray.findIndex((element, index) => {
       if (element === letter) {
-        secretWord[index] = letter;
+        openRandomImagePart(index, letter);
         openLetter(index, letter);
-        openRandomImagePart();
+        updateCss(letter);
+        secretWord[index] = letter;
       }
     });
-  }
-  // Если нет - просто говорим что FAIL
-  else {
+  } else {
     console.log('FAIl', secretWord);
   }
+};
+
+const updateCss = (el) => {
+  russianAlphabet.findIndex((element, index) => {
+    if (element === el) {
+      const button = document.getElementById('keypad').childNodes[index];
+      button.style.backgroundColor = 'green';
+    }
+  });
 };
 
 const renderLetters = () => {
@@ -89,7 +83,11 @@ const renderLetters = () => {
     document.getElementById('word').appendChild(letterBox);
   });
 
+  // Добавляем подсказку
   document.getElementById('hint').textContent = data.hint;
+
+  // Добавляем картинку, которую отгадываем
+  document.getElementById('image').style.backgroundImage = `url(${data.image})`;
 };
 
 // Открываем уже в HTML букву по индексу
@@ -102,6 +100,37 @@ const openLetter = (index, letter) => {
 // Отрисовываем слово, которое будем отгадывать и подсказку к ней
 renderLetters();
 
+// Отрисовываем "крышки" поверх картинки
+const renderImageOverlayBlocks = () => {
+  lettersArray.forEach(() => {
+    const block = document.createElement('div');
+    block.className = 'block';
+    block.style.width = `calc(${100 / (lettersArray.length / 2)}%)`;
+    document.getElementById('overlay').appendChild(block);
+  });
+};
+
+// Открываем рендомный кусок картинки
+const openRandomImagePart = (index, letter) => {
+  const openBlock = () => {
+    let generateRandomNumber = () => getRandomNumber(lettersArray.length);
+    const el =
+      document.getElementById('overlay').childNodes[generateRandomNumber()];
+
+    if (!el.classList.contains('open')) {
+      el.className = 'open';
+    } else {
+      openBlock();
+    }
+  };
+
+  if (letter !== secretWord[index]) {
+    openBlock();
+  }
+};
+
+renderImageOverlayBlocks();
+
 // Добавляем буквы - кнопки
 russianAlphabet.forEach((el) => {
   const button = document.createElement('button');
@@ -111,14 +140,3 @@ russianAlphabet.forEach((el) => {
   button.textContent = el;
   document.getElementById('keypad').appendChild(button);
 });
-
-
-
-// function calculatorAge (a) {
-//   return a*365;
-// };
-// const calculatorAge = (a) =>{
-//   a % 2 == 0 ? console.log("norm") : console.log("nenorm");
-// }
-// console.log (calculatorAge(5));
-
