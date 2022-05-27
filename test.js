@@ -62,8 +62,16 @@ const checkLetterInSecretWord = (letter) => {
       }
     });
   } else {
-    console.log('FAIl', secretWord);
+    downdataCss (letter)
   }
+};
+const downdataCss = (em) =>{
+  russianAlphabet.findIndex((element, index) => {
+    if (element === em) {
+      const button = document.getElementById('keypad').childNodes[index];
+      button.style.backgroundColor = 'red';
+    }
+  });
 };
 
 const updateCss = (el) => {
