@@ -25,9 +25,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   padding: 40px;
 }
 
@@ -91,6 +90,47 @@
 .left_side .keypadButton:hover {
   cursor: pointer;
   border-color: blue;
+}
+
+.keypad :hover {
+  border-bottom: 1px solid #fff;
+  font-weight: 400;
+  font-weight: 900;
+  letter-spacing: 2px;
+  -webkit-animation: in 1s cubic-bezier(0, 0, 1, 1) both;
+          animation: in 1s cubic-bezier(0, 0, 1, 1) both;
+}
+
+@-webkit-keyframes in {
+  0% {
+    font-size: 35px;
+  }
+  25% {
+    font-size: 40px;
+  }
+  75% {
+    font-size: 45px;
+  }
+  100% {
+    font-size: 50px;
+    color: #332d2d;
+  }
+}
+
+@keyframes in {
+  0% {
+    font-size: 35px;
+  }
+  25% {
+    font-size: 40px;
+  }
+  75% {
+    font-size: 45px;
+  }
+  100% {
+    font-size: 50px;
+    color: #332d2d;
+  }
 }
 
 .right_side {

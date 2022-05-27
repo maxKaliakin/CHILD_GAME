@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 40px;
   & .word {
     display: flex;
@@ -53,6 +53,30 @@
         cursor: pointer;
         border-color: blue;
       }
+    }
+  }
+}
+// Анимація при наведенні
+.keypad :hover {
+  border-bottom: 1px solid #fff;
+  font-weight: 400;
+  font-weight: 900;
+  letter-spacing: 2px;
+  // background: none;
+  animation: in 1s cubic-bezier(0, 0, 1, 1) both;
+  @keyframes in {
+    0% {
+    font-size: 35px;
+    }
+    25%{
+      font-size: 40px;
+    }
+    75%{
+      font-size: 45px;
+    }
+    100% {
+      font-size: 50px;
+    color: rgb(51, 45, 45);
     }
   }
 }
