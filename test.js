@@ -111,3 +111,14 @@ russianAlphabet.forEach((el) => {
   button.textContent = el;
   document.getElementById('keypad').appendChild(button);
 });
+
+
+
+// function calculatorAge (a) {
+//   return a*365;
+// };
+// const calculatorAge = (a) =>{
+//   a % 2 == 0 ? console.log("norm") : console.log("nenorm");
+// }
+// console.log (calculatorAge(5));
+
