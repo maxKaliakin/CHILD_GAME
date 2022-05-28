@@ -25,10 +25,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 40px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: calc(10px * 4);
 }
 
 .left_side .word {
@@ -42,8 +41,8 @@
 .left_side .word li {
   border: 1px solid #000;
   background-color: #000;
-  width: 80px;
-  height: 80px;
+  width: calc(10px * 8);
+  height: calc(10px * 8);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,7 +52,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 32px;
+  font-size: calc(10px * 3);
 }
 
 .left_side .word li.open {
@@ -93,6 +92,35 @@
   border-color: blue;
 }
 
+.keypad :hover {
+  border-bottom: 1px solid #fff;
+  font-weight: 400;
+  font-weight: 900;
+  letter-spacing: calc(10px / 5);
+  -webkit-animation: in 1s cubic-bezier(0, 0, 1, 1) both;
+          animation: in 1s cubic-bezier(0, 0, 1, 1) both;
+}
+
+@-webkit-keyframes in {
+  0% {
+    font-size: calc(10px * 3);
+  }
+  100% {
+    font-size: calc(10px * 5);
+    color: grey;
+  }
+}
+
+@keyframes in {
+  0% {
+    font-size: calc(10px * 3);
+  }
+  100% {
+    font-size: calc(10px * 5);
+    color: grey;
+  }
+}
+
 .right_side {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -118,8 +146,8 @@
 
 .right_side .image .overlay {
   background-color: rgba(200, 200, 200, 0.97);
-  height: 100%;
-  width: 100%;
+  height: calc(10% * 10);
+  width: calc(10% * 10);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -132,5 +160,6 @@
   background-color: rebeccapurple;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 80%;
+  background-size: calc(10% * 8);
 }
+/*# sourceMappingURL=test.css.map */
